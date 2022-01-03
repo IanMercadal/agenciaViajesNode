@@ -1,0 +1,27 @@
+{
+  "name": "agenciaviajesnode",
+  "version": "1.0.0",
+  "description": "Primer Proyecto con Node JS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanMercadal/agenciaViajesNode.git"
+  },
+  "author": "Ian Mercadal (Juan de la Torre)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanMercadal/agenciaViajesNode/issues"
+  },
+  "homepage": "https://github.com/IanMercadal/agenciaViajesNode#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
