@@ -1,0 +1,81 @@
+-- 1. Crear Base de Datos
+CREATE DATABASE IF NOT EXISTS agencia_viajes 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+
+-- 2. Seleccionar la Base de Datos
+USE agencia_viajes;
+
+-- 3. Crear tabla viajes
+CREATE TABLE IF NOT EXISTS viajes (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NULL,
+    precio VARCHAR(255) NULL,
+    fecha_ida DATETIME NULL,
+    fecha_vuelta DATETIME NULL,
+    imagen VARCHAR(255) NULL,
+    descripcion VARCHAR(255) NULL,
+    disponibles VARCHAR(255) NULL,
+    slug VARCHAR(255) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 4. Crear tabla testimoniales
+CREATE TABLE IF NOT EXISTS testimoniales (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NULL,
+    correo VARCHAR(255) NULL,
+    mensaje VARCHAR(255) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO viajes 
+    (titulo, precio, fecha_ida, fecha_vuelta, imagen, descripcion, disponibles, slug) 
+VALUES
+('Viaje a Canadá', '38000', '2025-06-15 08:00:00', '2025-06-25 18:00:00', 'destinos_canada.jpg', 'Explora las Montañas Rocosas, lagos cristalinos y la belleza natural de Canadá.', '12', 'viaje-a-canada'),
+('Viaje a Grecia', '29000', '2025-07-10 10:00:00', '2025-07-20 20:00:00', 'destinos_grecia.jpg', 'Recorre Atenas, la Acrópolis y disfruta de las playas de las islas griegas.', '15', 'viaje-a-grecia'),
+('Viaje a Londres', '35000', '2025-08-05 09:00:00', '2025-08-12 22:00:00', 'destinos_londres.jpg', 'Descubre el Big Ben, el Palacio de Buckingham y la rica historia de Londres.', '10', 'viaje-a-londres'),
+('Viaje a París', '42000', '2025-09-12 07:30:00', '2025-09-20 19:00:00', 'destinos_paris.jpg', 'La ciudad del amor te espera: Torre Eiffel, Louvre y la mejor gastronomía.', '8', 'viaje-a-paris'),
+('Viaje a Río de Janeiro', '31000', '2025-10-01 06:00:00', '2025-10-09 21:00:00', 'destinos_rio.jpg', 'Samba, playas como Copacabana y el imponente Cristo Redentor en Brasil.', '20', 'viaje-a-rio'),
+('Viaje a Roma', '37000', '2025-11-08 12:00:00', '2025-11-15 15:00:00', 'destinos_roma.jpg', 'Sumérgete en la historia de la ciudad eterna: el Coliseo, el Vaticano y más.', '14', 'viaje-a-roma');
+
+INSERT INTO testimoniales (nombre, correo, mensaje) VALUES
+-- ── Testimoniales de Canadá ──────────────────────────
+('Laura Gómez', 'laura.gomez@example.com', 'Canadá es pura naturaleza, los lagos son impresionantes. ¡Excelente viaje!'),
+('Carlos Ruiz', 'carlos.ruiz@example.com', 'El tour por las Montañas Rocosas superó mis expectativas. Muy organizado.'),
+('Ana Silva', 'ana.silva@example.com', 'Un destino perfecto para desconectar. Canadá me enamoró.'),
+('Pedro Castro', 'pedro.castro@example.com', 'La atención fue de primera y los paisajes de Canadá son de otro mundo.'),
+('Marta Díaz', 'marta.diaz@example.com', 'Increíble experiencia en Canadá, sin duda volveré a repetir con ustedes.'),
+
+-- ── Testimoniales de Grecia ──────────────────────────
+('Javier López', 'javier.lopez@example.com', 'Grecia es magia pura. La Acrópolis y las islas son un sueño hecho realidad.'),
+('Elena Torres', 'elena.torres@example.com', 'El crucero por las islas griegas fue espectacular. Comida deliciosa.'),
+('Diego Fernández', 'diego.fernandez@example.com', 'Viaje a Grecia muy bien organizado. Los atardeceres en Santorini son únicos.'),
+('Sofía Ramírez', 'sofia.ramirez@example.com', 'Me encantó la historia de Atenas y la hospitalidad griega. 10/10.'),
+('Luis Herrera', 'luis.herrera@example.com', 'Un viaje inolvidable. Grecia superó todas mis expectativas.'),
+
+-- ── Testimoniales de Londres ─────────────────────────
+('Carmen Vargas', 'carmen.vargas@example.com', 'Londres es fascinante. Ver el cambio de guardia fue lo mejor del viaje.'),
+('Raúl Mendoza', 'raul.mendoza@example.com', 'Excelente organización. El paseo por el Támesis y el London Eye son imperdibles.'),
+('Lucía Ortiz', 'lucia.ortiz@example.com', 'La ciudad tiene un encanto único. A pesar de la lluvia, Londres enamora.'),
+('Andrés Peña', 'andres.pena@example.com', 'Muy buen viaje. Los museos de Londres son gratuitos y espectaculares.'),
+('Isabel Navarro', 'isabel.navarro@example.com', 'Un viaje perfecto. La guía turística sabía muchísimo de la historia de Londres.'),
+
+-- ── Testimoniales de París ───────────────────────────
+('Jorge Salinas', 'jorge.salinas@example.com', 'París es hermosa. Subir a la Torre Eiffel de noche es algo que nunca olvidaré.'),
+('Valeria Ríos', 'valeria.rios@example.com', 'La ciudad del amor cumplió todas mis expectativas. Excelente servicio.'),
+('Fernando Aguirre', 'fernando.aguirre@example.com', 'El museo del Louvre es enorme, necesitas días. París es increíble.'),
+('Daniela Vega', 'daniela.vega@example.com', 'La gastronomía francesa es de otro nivel. Un viaje de lujo a buen precio.'),
+('Manuel Solís', 'manuel.solis@example.com', 'Viaje a París impecable, desde el hotel hasta los tours guiados.'),
+
+-- ── Testimoniales de Río de Janeiro ──────────────────
+('Gabriela Castro', 'gabriela.castro@example.com', 'Río es energía pura. El Cristo Redentor y Copacabana son impresionantes.'),
+('Emilio Delgado', 'emilio.delgado@example.com', 'La fiesta y la alegría de Río son contagiosas. Un viaje muy divertido.'),
+('Mariana Espinoza', 'mariana.espinoza@example.com', 'Las playas de Río son hermosas. El tour por la favela fue muy cultural.'),
+('Rodrigo Cuevas', 'rodrigo.cuevas@example.com', 'Excelente viaje a Río. La vista desde el Pan de Azúcar es inolvidable.'),
+('Fernanda Rojas', 'fernanda.rojas@example.com', 'Brasil me robó el corazón. Río de Janeiro es un destino que hay que visitar.'),
+
+-- ── Testimoniales de Roma ────────────────────────────
+('Ignacio Prieto', 'ignacio.prieto@example.com', 'Roma es un museo al aire libre. El Coliseo me dejó sin palabras.'),
+('Antonella Silva', 'antonella.silva@example.com', 'La gastronomía italiana en Roma fue espectacular. Repetiré sin duda.'),
+('Bruno Morales', 'bruno.morales@example.com', 'El Vaticano y la Capilla Sixtina son imperdibles. Excelente viaje.'),
+('Renata Luna', 'renata.luna@example.com', 'Roma enamora. Caminar por sus calles es retroceder en el tiempo.'),
+('Cristóbal Ramos', 'cristobal.ramos@example.com', 'Viaje a Roma perfecto: historia, arte y buena comida. 100% recomendado.');
